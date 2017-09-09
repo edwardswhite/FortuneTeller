@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
         //noinspection SimplifiableIfStatement
@@ -94,6 +96,17 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, AboutActivity.class);
             intent.putExtra("Message","version 1.2");
             startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.implicit_share) {
+
+            Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+            sharingIntent.setType("text/plain");
+            String stringToShare="Have you seen the future?";
+            sharingIntent.putExtra(Intent.EXTRA_TEXT, stringToShare);
+            startActivity(Intent.createChooser(sharingIntent, "Share via"));
+
             return true;
         }
         return super.onOptionsItemSelected(item);
