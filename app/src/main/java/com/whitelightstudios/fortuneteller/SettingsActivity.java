@@ -2,6 +2,8 @@ package com.whitelightstudios.fortuneteller;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -11,7 +13,7 @@ import android.widget.Toast;
 public class SettingsActivity extends Activity {
 
     Switch switchName;
-     EditText editText_editTextName;
+    EditText editText_editTextName;
 
     protected FortuneApplicationClass app;
 
@@ -27,6 +29,23 @@ public class SettingsActivity extends Activity {
         editText_editTextName=(EditText)findViewById(R.id.settings_editTextName);
 
         editText_editTextName.setText(app.getCustomName_string());
+
+        editText_editTextName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                app.setCustomName_string(s.toString());
+            }
+        });
 
         if(app.getCustomName_state()){
             switchName.setChecked(true);

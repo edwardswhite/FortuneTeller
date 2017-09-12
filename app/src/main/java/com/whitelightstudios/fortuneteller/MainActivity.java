@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(app.getCustomName_state()) {
-                //    int index = new Random().nextInt(namedFortuneList.length);
+                    int index = new Random().nextInt(namedFortuneList.length);
                 //    mFortuneText.setText(namedFortuneList[index]);
-                    mFortuneText.setText(app.getCustomName_string());
+                    mFortuneText.setText(namedFortuneList[index] + ", " + app.getCustomName_string());
                 }else {
                     int index = new Random().nextInt(fortuneList.length);
                     mFortuneText.setText(fortuneList[index]);
