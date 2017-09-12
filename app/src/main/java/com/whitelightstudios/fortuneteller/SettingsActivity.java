@@ -4,13 +4,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
 public class SettingsActivity extends Activity {
 
     Switch switchName;
-    // private EditText editText_editTextName;
+     EditText editText_editTextName;
 
     protected FortuneApplicationClass app;
 
@@ -23,7 +24,9 @@ public class SettingsActivity extends Activity {
         app=(FortuneApplicationClass)getApplication();
 
         switchName=(Switch)findViewById(R.id.settings_switchName);
-       // editText_editTextName=(EditText)findViewById(R.id.settings_editTextName);
+        editText_editTextName=(EditText)findViewById(R.id.settings_editTextName);
+
+        editText_editTextName.setText(app.getCustomName_string());
 
         if(app.getCustomName_state()){
             switchName.setChecked(true);

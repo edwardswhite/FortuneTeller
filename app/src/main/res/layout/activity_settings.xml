@@ -11,6 +11,15 @@
         android:text="Enable custom name in fortune"
         />
 
-
+    <EditText
+        android:id="@+id/settings_editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
+        android:text="@string/pref_default_display_name"
+        />
 
 </LinearLayout>

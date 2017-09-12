@@ -18,10 +18,21 @@ public class FortuneApplicationClass extends Application {
 
     Boolean customName_state;
 
+    public String getCustomName_string() {
+        return customName_string;
+    }
+
+    public void setCustomName_string(String customName_string) {
+        this.customName_string = customName_string;
+    }
+
+    String customName_string;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         setCustomName_state(false);
+        setCustomName_string("Dave");
     }
 }
